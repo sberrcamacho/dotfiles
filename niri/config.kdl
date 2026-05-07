@@ -1,0 +1,276 @@
+// Check the wiki for a full description of the configuration:
+// https://yalter.github.io/niri/Configuration:-Introduction
+
+// ========================================================
+// ========================================================
+
+// --- Configuration: Input ---
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+input {
+    keyboard {
+        xkb {
+	        layout "us"
+          options "caps:escape_shifted_capslock,altwin:swap_lalt_lwin"
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+        scroll-method "two-finger"
+    }
+
+    mouse {
+        accel-profile "flat"
+    }
+
+    warp-mouse-to-focus
+}
+
+// ========================================================
+// ========================================================
+
+// --- Configuration: Outputs ---
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
+
+output "eDP-1" {
+    mode "1920x1080"
+    transform "normal"
+    focus-at-startup
+    scale 1.1
+}
+
+output "HDMI-A-1" {
+    mode "1024x768"
+    transform "normal"
+    position x=0 y=0
+    scale 1.0
+}
+
+// ========================================================
+// ========================================================
+
+// --- Configuration: Key Bindings ---
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
+
+binds {
+
+    // Noctalia Bindings
+    Mod+Space repeat=false { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+A repeat=false {spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+    Mod+I repeat=false { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
+
+    Mod+Shift+Q repeat=false { spawn-sh "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend";}
+
+    XF86AudioRaiseVolume { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
+    XF86AudioLowerVolume { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
+
+    XF86AudioMute { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
+
+    XF86MonBrightnessUp { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
+    XF86MonBrightnessDown { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
+
+    // Custom Bindings
+    Mod+Return repeat=false { spawn "kitty"; }
+    Mod+E { spawn "yazi"; }
+    Mod+B repeat=false { spawn "zen-browser"; }
+
+    // Core Bindings
+    Mod+O repeat=false { toggle-overview; }
+
+    Mod+Q repeat=false { close-window; }
+
+    Mod+H     { focus-column-left; }
+    Mod+L     { focus-column-right; }
+
+    Mod+Ctrl+H     { move-column-left; }
+    Mod+Ctrl+J     { move-window-down; }
+    Mod+Ctrl+K     { move-window-up; }
+    Mod+Ctrl+L     { move-column-right; }
+
+    Mod+J     { focus-window-or-workspace-down; }
+    Mod+K     { focus-window-or-workspace-up; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    Mod+Ctrl+Home { move-column-to-first; }
+    Mod+Ctrl+End  { move-column-to-last; }
+
+    Mod+Shift+H     { focus-monitor-left; }
+    Mod+Shift+J     { focus-monitor-down; }
+    Mod+Shift+K     { focus-monitor-up; }
+    Mod+Shift+L     { focus-monitor-right; }
+
+    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+
+    Mod+Ctrl+F { expand-column-to-available-width; }
+
+    Mod+C { center-column; }
+
+    Mod+Ctrl+C { center-visible-columns; }
+
+    Mod+V       { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    Mod+Shift+P { power-off-monitors; }
+}
+
+// ========================================================
+// ========================================================
+
+// --- Configuration: Layout ---
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
+
+layout {
+    gaps 8
+
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width {proportion 0.5; }
+
+    focus-ring {
+        off
+    }
+
+    border {
+        width 3
+    }
+
+    shadow {
+        on
+        softness 30
+        spread 5
+
+        offset x=0 y=5
+        color "#0007"
+    }
+
+}
+
+// ========================================================
+// ========================================================
+
+// --- Configuration: Miscellaneous ---
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+}
+
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+environment {
+    QT_QPA_PLATFORMTHEME "gtk3"
+    MOZ_ENABLE_WAYLAND "1"
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+    XDG_SESSION_TYPE "wayland"
+}
+
+// ========================================================
+// ========================================================
+
+// --- Configuration: Window Rules ---
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+// Set the overview wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}
+
+// ========================================================
+// ========================================================
+
+// --- Configuration: Animations ---
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
+
+animations {
+    slowdown 1
+}
+
+// ========================================================
+// ========================================================
+
+// -- Configuration: Gestures ---
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Gestures
+
+gestures {
+  hot-corners {
+    off
+  }
+}
+
+// ========================================================
+// ========================================================
+
+// --- Configuration: Include ---
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Include
+
+include "./noctalia.kdl"
+
+// ========================================================
+// ========================================================
+
+
+
+
