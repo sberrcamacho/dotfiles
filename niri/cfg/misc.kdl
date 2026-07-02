@@ -1,0 +1,45 @@
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+    QT_QPA_PLATFORMTHEME "gtk3"
+}
+
+debug {
+    // Allows notification actions and window activation from Noctalia.
+    honor-xdg-activation-with-invalid-serial
+}
+
+
+blur {
+    // 1 pasada es ultra ligero, pero 2 pasadas ofrece el difuminado ideal.
+    // Con Iris Xe, mantén "passes 2" como tu límite máximo.
+    passes 2      
+
+    // Un offset ligeramente más alto (3.5 en lugar del 3.0 por defecto) 
+    // compensa tener pocas pasadas, expandiendo el desenfoque para que se vea más suave.
+    offset 3.5    
+
+    // Agrega un ruido sutil para mitigar el efecto de bandas de color (color banding) 
+    // que suele ocurrir en desenfoques ligeros sobre gráficos integrados.
+    noise 0.02    
+
+    // Mantiene los colores fieles al fondo original sin saturar de más la GPU.
+    saturation 1.0 
+}
+
