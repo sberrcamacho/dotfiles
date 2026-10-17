@@ -65,6 +65,12 @@ binds {
     MOD+CTRL+H                          { move-column-left; }
     MOD+CTRL+L                          { move-column-right; }
 
+    // ─── Ventanas en vertical (apilar dentro de una columna) ───
+    MOD+BRACKETLEFT                     hotkey-overlay-title="Meter/sacar ventana a la columna izquierda" { consume-or-expel-window-left; }
+    MOD+BRACKETRIGHT                    hotkey-overlay-title="Meter/sacar ventana a la columna derecha"   { consume-or-expel-window-right; }
+    MOD+COMMA                           hotkey-overlay-title="Traer la siguiente ventana debajo de esta"  { consume-window-into-column; }
+    MOD+PERIOD                          hotkey-overlay-title="Sacar la ventana de abajo a su propia columna" { expel-window-from-column; }
+
     MOD+HOME                            { focus-column-first; }
     MOD+END                             { focus-column-last; }
     MOD+CTRL+HOME                       { move-column-to-first; }
