@@ -4,3 +4,5 @@
     // polkit: handled by noctalia v5 built-in agent ([shell] polkit_agent = true)
     spawn-at-startup "noctalia"
     spawn-sh-at-startup "easyeffects --gapplication-service"
+    // Máximo 2 ventanas apiladas por columna; con 3 o más → pestañas
+    spawn-sh-at-startup "~/.config/niri/scripts/auto-tab.py"
