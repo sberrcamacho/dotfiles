@@ -25,11 +25,15 @@ open_near_click_launcher        = false
 wallpaper_placement             = "attached"
 session_placement               = "floating"
 session_position                = "center"
+list_item_background            = true        # cada resultado en su tarjeta (estilo v4)
 
-# Launcher: cuadrícula con categorías, ordenado por uso
+# Launcher estilo v4: vertical, búsqueda arriba, lista con tarjetas
 [shell.launcher]
-app_grid        = true          # cuadrícula
-categories      = true
+layout          = "simple"      # 560×500, búsqueda arriba
+app_grid        = false         # lista
+categories      = false         # sin fila de categorías
+compact         = false
+show_icons      = true
 sort_by_usage   = true
 
 # Overview sin fondo desenfocado

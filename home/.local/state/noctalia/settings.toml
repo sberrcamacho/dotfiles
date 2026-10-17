@@ -1,4 +1,4 @@
-config_version = 14
+config_version = 15
 
 [audio]
 enable_overdrive = true
@@ -32,6 +32,9 @@ type = "clipboard"
 
 [desktop_widgets]
 enabled = false
+
+[dock]
+reserve_space = false
 
 [lockscreen_widgets]
 enabled = false
@@ -97,25 +100,36 @@ widget_order = [ "lockscreen-login-box@DVI-I-1", "lockscreen-login-box@eDP-1" ]
         show_unlock_hint = true
         show_weather = true
 
+[osd]
+position_vertical = "top_left"
+
+[plugin_settings."kenn/keybind-cheatsheet"]
+show_actions = true
+
 [plugins]
 enabled = [
     "noctalia/timer",
     "thepunkoff/pomodoro",
-    "damian-ds7/battery-threshold",
     "nightwatch75/todo",
     "noctalia/notes",
     "alexander/screen-toolkit",
     "yuuto/arch-updater",
     "raycursive/niri-displays",
-    "aristides/udiskie"
+    "aristides/udiskie",
+    "thaer99ob/default-apps",
+    "lfdominguez/claude-sessions"
 ]
 
 [shell]
-font_family = "Lilex Nerd Font Medium"
 screen_time_enabled = true
 
     [shell.launcher]
-    show_app_origin_indicator = false
+    category_icons_only = true
+    layout = "full"
+    width = 560
+
+    [shell.panel]
+    wallpaper_placement = "floating"
 
 [theme]
 builtin = "Noctalia"
@@ -142,3 +156,6 @@ transition_on_startup = true
 
 [widget.media]
 artist_first = false
+
+[widget.visualizer]
+show_when_idle = true

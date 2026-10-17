@@ -95,7 +95,7 @@ inetutils
 intel-lpmd
 intel-media-driver
 intel-ucode
-intellij-idea-community-edition
+intellij-idea-oss
 inter-font
 iwd
 jdk21-openjdk
@@ -147,7 +147,6 @@ nwg-look
 obs-studio
 obsidian
 onedrive-abraunegg
-onlyoffice-bin
 opencl-mesa
 opencode
 openssh
