@@ -179,7 +179,7 @@ type = "clipboard"
 
 # ─── Notifications / OSD: mismo look que la barra (75%, sin borde) ───
 [notification]
-position           = "top_left"     # siempre arriba a la izquierda, fuera de la isla
+position           = "top_right"    # siempre arriba a la derecha, fuera de la isla
 background_opacity = 0.75
 border             = false
 offset_x           = 8              # mismo margen que los gaps de niri
