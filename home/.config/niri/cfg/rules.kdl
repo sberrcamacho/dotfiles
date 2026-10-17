@@ -52,3 +52,11 @@ layer-rule {
         xray false
     }
 }
+
+// Android Emulator (X11 vía xwayland-satellite): flotante para que niri no
+// lo redimensione (si no, el contenido queda pegado a la izquierda y el resto gris).
+// No siempre aplica (satellite fija el app-id tarde): scripts/emulator-float.py lo garantiza.
+window-rule {
+    match app-id="^Emulator$"
+    open-floating true
+}

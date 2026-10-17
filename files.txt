@@ -27,5 +27,6 @@
 .config/easyeffects/db
 .config/orbiscreen/orbiscreen.toml
 .config/onlyoffice/DesktopEditors.conf
+.config/spotify-flags.conf
 .config/environment.d
 .config/mimeapps.list
