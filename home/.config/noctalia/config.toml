@@ -68,10 +68,11 @@ unit    = "celsius"
 effects = true
 
 # ─── Bar ───
-# Pestaña pegada arriba (esquinas inferiores redondeadas), sin cápsulas.
-#   start  = control center (navigation-filled), workspaces, visualizador (solo con música)
-#   center = reloj 12h + día
-#   end    = [privacidad, grabando, bloq mayús, updates: solo cuando aplican], pomodoro, tray, red, volumen, batería, notificaciones
+# Isla compacta pegada arriba (esquinas inferiores redondeadas), sin cápsulas.
+#   start  = visualizador (solo con música)
+#   center = solo la hora (fecha en el tooltip)
+#   end    = [privacidad, grabando, bloq mayús, updates: solo cuando aplican], pomodoro, tray, red, batería, notificaciones
+# Fuera de la barra: control center = click derecho en zona vacía / Mod+A; volumen = rueda sobre la barra
 [bar.main]
 position             = "top"
 thickness            = 34
@@ -82,15 +83,15 @@ border_width         = 0.0
 radius               = 12
 concave_edge_corners = true         # se funde con el borde superior
 margin_edge          = 0            # pegada arriba
-margin_ends          = 120
-padding              = 10
-widget_spacing       = 10
+margin_ends          = 560          # isla de ~625 px
+padding              = 12
+widget_spacing       = 8
 hover_highlight      = true
 capsule              = false
 
-start  = ["control-center", "workspaces", "visualizer"]
+start  = ["visualizer"]
 center = ["clock"]
-end    = ["privacy", "recording", "lock_keys", "updates", "pomodoro", "tray", "network", "volume", "battery", "notifications"]
+end    = ["privacy", "recording", "lock_keys", "updates", "pomodoro", "tray", "network", "battery", "notifications"]
 
 [bar.main.dead_zone.actions]
 left        = "panel-toggle launcher"
@@ -98,35 +99,19 @@ right       = "panel-toggle control-center"
 scroll_up   = "volume-up"
 scroll_down = "volume-down"
 
-[widget.control-center]
-type  = "control-center"
-glyph = "navigation-filled"
-
-[widget.workspaces]
-type                  = "workspaces"
-style                 = "regular"
-show_labels           = false       # píldoras sin número
-active_pill_size      = 2.8         # activa se estira
-inactive_pill_size    = 1.0
-pill_scale            = 0.75
-focused_color         = "primary"
-occupied_color        = "secondary"
-empty_color           = "outline"
-change_color_on_hover = true
-hide_when_empty       = false
-show_tooltip          = false
-
 [widget.visualizer]
 type           = "audio_visualizer"
-width          = 56
-bands          = 16
+width          = 72
+bands          = 20
+mirrored       = true
+centered       = true
 show_when_idle = false               # solo aparece mientras suena algo
 color_1        = "primary"
-color_2        = "secondary"
+color_2        = "tertiary"
 
 [widget.clock]
 type           = "clock"
-format         = "{:%I:%M %p · %a %d %b}"
+format         = "{:%I:%M %p}"
 tooltip_format = "{:%A, %d de %B de %Y}"
 
 [widget.privacy]
@@ -144,10 +129,6 @@ match_adjacent_spacing = true
 type       = "network"
 show_label = false
 vpn_status = "replace"
-
-[widget.volume]
-type       = "volume"
-show_label = false
 
 [widget.battery]
 type       = "battery"
@@ -201,7 +182,7 @@ type = "clipboard"
 position           = "top_right"
 background_opacity = 0.75
 border             = false
-offset_x           = 120            # alineadas con el borde derecho de la barra (margin_ends)
+offset_x           = 560            # alineadas con el borde derecho de la barra (margin_ends)
 offset_y           = 8
 
 [osd]
