@@ -6,5 +6,5 @@
     spawn-sh-at-startup "easyeffects --gapplication-service"
     // Máximo 2 ventanas apiladas por columna; con 3 o más → pestañas
     spawn-sh-at-startup "~/.config/niri/scripts/auto-tab.py"
-    // Android Emulator: ventanas flotantes y barra lateral pegada al emulador
-    spawn-sh-at-startup "~/.config/niri/scripts/emulator-float.py"
+    // Android Emulator: barra lateral en la columna de la derecha del emulador
+    spawn-sh-at-startup "~/.config/niri/scripts/emulator-toolbar.py"
