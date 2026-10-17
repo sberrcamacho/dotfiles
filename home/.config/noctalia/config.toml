@@ -1,0 +1,231 @@
+# Full list of options: `noctalia config export full`
+# Changes made in the Settings UI are stored in ~/.local/state/noctalia/settings.toml (overrides this file).
+
+[shell]
+polkit_agent      = true            # replaces polkit-gnome (removed from niri autostart)
+font_family       = "Lilex Nerd Font Medium"
+time_format       = "{:%H:%M}"
+telemetry_enabled = false
+avatar_path       = "~/.face"
+card_borders      = false
+
+# Login (Noctalia Greeter): sincroniza fondo, colores y fuente al cambiar
+[shell.greeter_sync]
+auto_sync = true
+
+# ─── Panels ───
+[shell.panel]
+transparency_mode               = "soft"
+borders                         = false
+control_center_placement        = "attached"
+open_near_click_control_center  = true
+launcher_placement              = "floating"
+launcher_position               = "center"
+open_near_click_launcher        = false
+wallpaper_placement             = "attached"
+session_placement               = "floating"
+session_position                = "center"
+
+# Launcher: cuadrícula con categorías, ordenado por uso
+[shell.launcher]
+app_grid        = true          # cuadrícula
+categories      = true
+sort_by_usage   = true
+
+# Overview sin fondo desenfocado
+[backdrop]
+enabled        = false
+blur_intensity = 0.4
+tint_intensity = 0.6
+
+[wallpaper]
+enabled             = true
+fill_mode           = "crop"
+transition_duration = 1500
+directory           = "~/Pictures/Wallpapers"
+
+[wallpaper.automation]
+enabled          = false
+interval_seconds = 300
+order            = "random"
+
+[theme]
+mode             = "dark"
+source           = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+# Lockscreen: escritorio desenfocado detrás de la caja de login
+[lockscreen]
+blurred_desktop = true
+
+[location]
+auto_locate = true
+address     = "Medellín, Colombia"
+
+[weather]
+enabled = true
+unit    = "celsius"
+effects = true
+
+# ─── Bar ───
+# Pestaña pegada arriba (esquinas inferiores redondeadas), sin cápsulas.
+#   start  = control center (navigation-filled), workspaces, visualizador (solo con música)
+#   center = reloj 12h + día
+#   end    = [privacidad, grabando, bloq mayús, updates: solo cuando aplican], pomodoro, tray, red, volumen, batería, notificaciones
+[bar.main]
+position             = "top"
+thickness            = 34
+background_opacity   = 0.75
+shadow               = true
+contact_shadow       = false
+border_width         = 0.0
+radius               = 12
+concave_edge_corners = true         # se funde con el borde superior
+margin_edge          = 0            # pegada arriba
+margin_ends          = 120
+padding              = 10
+widget_spacing       = 10
+hover_highlight      = true
+capsule              = false
+
+start  = ["control-center", "workspaces", "visualizer"]
+center = ["clock"]
+end    = ["privacy", "recording", "lock_keys", "updates", "pomodoro", "tray", "network", "volume", "battery", "notifications"]
+
+[bar.main.dead_zone.actions]
+left        = "panel-toggle launcher"
+right       = "panel-toggle control-center"
+scroll_up   = "volume-up"
+scroll_down = "volume-down"
+
+[widget.control-center]
+type  = "control-center"
+glyph = "navigation-filled"
+
+[widget.workspaces]
+type                  = "workspaces"
+style                 = "regular"
+show_labels           = false       # píldoras sin número
+active_pill_size      = 2.8         # activa se estira
+inactive_pill_size    = 1.0
+pill_scale            = 0.75
+focused_color         = "primary"
+occupied_color        = "secondary"
+empty_color           = "outline"
+change_color_on_hover = true
+hide_when_empty       = false
+show_tooltip          = false
+
+[widget.visualizer]
+type           = "audio_visualizer"
+width          = 56
+bands          = 16
+show_when_idle = false               # solo aparece mientras suena algo
+color_1        = "primary"
+color_2        = "secondary"
+
+[widget.clock]
+type           = "clock"
+format         = "{:%I:%M %p · %a %d %b}"
+tooltip_format = "{:%A, %d de %B de %Y}"
+
+[widget.privacy]
+type          = "privacy"
+hide_inactive = true
+
+[widget.tray]
+type                   = "tray"
+drawer                 = true
+drawer_columns         = 3
+hide_passive           = true
+match_adjacent_spacing = true
+
+[widget.network]
+type       = "network"
+show_label = false
+vpn_status = "replace"
+
+[widget.volume]
+type       = "volume"
+show_label = false
+
+[widget.battery]
+type       = "battery"
+show_label = false
+
+[widget.notifications]
+type = "notifications"
+
+# ─── Widgets contextuales: solo aparecen cuando hay algo que mostrar ───
+[widget.lock_keys]
+type           = "lock_keys"
+hide_when_off  = true      # solo visible con Bloq Mayús activo
+show_num_lock  = false     # numlock siempre está encendido
+display        = "short"
+
+[widget.recording]
+type = "alexander/screen-toolkit:widget"   # punto rojo solo mientras grabas
+
+[widget.updates]
+type          = "yuuto/arch-updater:widget"
+hide_on_empty = true
+
+[widget.pomodoro]
+type = "thepunkoff/pomodoro:widget"
+
+# ─── Control Center ───
+[control_center]
+sidebar              = "compact"
+show_shortcut_labels = true
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "audio"
+
+[[control_center.shortcuts]]
+type = "mic_mute"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "clipboard"
+
+# ─── Notifications / OSD: mismo look que la barra (75%, sin borde) ───
+[notification]
+position           = "top_right"
+background_opacity = 0.75
+border             = false
+offset_x           = 120            # alineadas con el borde derecho de la barra (margin_ends)
+offset_y           = 8
+
+[osd]
+position           = "bottom_center"
+offset_y           = 50             # un poco separado del borde inferior
+background_opacity = 0.85
+border             = true
+border_color       = "primary"      # contraste con lo que haya detrás
+border_width       = 1.5
+
+# Templates de color para apps (mismo set que el UI)
+[theme.templates]
+builtin_ids   = ["btop", "gtk3", "gtk4", "kitty", "niri"]
+community_ids = ["claude-code", "opencode", "spicetify", "zen-browser", "obsidian", "papirus-icons", "yazi"]
+
+# ─── Plugins: sin widgets en la barra; se usan por atajo (niri) o lanzador ───
+[plugin_settings."yuuto/arch-updater"]
+auto_check_hours  = 6       # revisa solo y avisa con notificación
+notify_on_updates = true
+
+[plugin_settings."aristides/udiskie"]
+enable_notifications = true # notificación al conectar/expulsar USB
+
+[plugin_settings."alexander/screen-toolkit"]
+hide-when-unused  = true      # widget de la barra solo durante una grabación
+selected-ocr-lang = "spa+eng"   # OCR en español e inglés
+video-path        = "~/Videos"

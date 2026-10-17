@@ -1,0 +1,7 @@
+{
+  "Main method": { "prefix": "psvm", "body": ["public static void main(String[] args) {", "    $0", "}"] },
+  "Print": { "prefix": "sout", "body": ["System.out.println($0);"] },
+  "For each": { "prefix": "fore", "body": ["for (${1:Type} ${2:item} : ${3:items}) {", "    $0", "}"] },
+  "Try/catch": { "prefix": "tryc", "body": ["try {", "    $1", "} catch (${2:Exception} e) {", "    ${3:e.printStackTrace();}", "}"] },
+  "Class": { "prefix": "cls", "body": ["public class ${1:${TM_FILENAME_BASE}} {", "    $0", "}"] }
+}

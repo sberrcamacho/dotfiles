@@ -1,0 +1,10 @@
+{
+  "Main": { "prefix": "main", "body": ["fun main() {", "    $0", "}"] },
+  "Data class": { "prefix": "dc", "body": ["data class ${1:Name}(", "    val ${2:id}: ${3:Int},", ")"] },
+  "Composable": { "prefix": "comp", "body": ["@Composable", "fun ${1:Name}(modifier: Modifier = Modifier) {", "    $0", "}"] },
+  "Composable preview": { "prefix": "prev", "body": ["@Preview(showBackground = true)", "@Composable", "fun ${1:Name}Preview() {", "    ${1:Name}()", "}"] },
+  "Activity": { "prefix": "activity", "body": ["class ${1:Main}Activity : ComponentActivity() {", "    override fun onCreate(savedInstanceState: Bundle?) {", "        super.onCreate(savedInstanceState)", "        setContent {", "            $0", "        }", "    }", "}"] },
+  "ViewModel": { "prefix": "vm", "body": ["class ${1:Name}ViewModel : ViewModel() {", "    private val _state = MutableStateFlow(${2:initial})", "    val state: StateFlow<${3:Type}> = _state.asStateFlow()", "}"] },
+  "Log": { "prefix": "logd", "body": ["Log.d(\"${1:TAG}\", \"${2:message}\")"] },
+  "Remember state": { "prefix": "rem", "body": ["var ${1:value} by remember { mutableStateOf(${2:\"\"}) }"] }
+}

@@ -1,0 +1,16 @@
+[display]
+width = 1920
+height = 1080
+refresh_rate_hz = 90
+pinned = true
+
+[capture]
+preferred = "evdi"
+
+[encode]
+bitrate_kbps = 8000
+preferred_encoder = "auto"
+
+[transport]
+signaling_port = 8788
+mdns_advertise = true

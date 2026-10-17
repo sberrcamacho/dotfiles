@@ -1,0 +1,31 @@
+# Rutas relativas a $HOME que se versionan (las usan sync.sh e install.sh).
+# ─── Shell ───
+.zshrc
+.zprofile
+.p10k.zsh
+.gitconfig
+.config/git/ignore
+# ─── Escritorio: niri + Noctalia ───
+.config/niri
+.config/noctalia/config.toml
+.local/state/noctalia/settings.toml
+# ─── Apariencia ───
+.config/gtk-3.0/settings.ini
+.config/gtk-3.0/gtk.css
+.config/gtk-3.0/noctalia.css
+.config/gtk-4.0/settings.ini
+.config/gtk-4.0/gtk.css
+.config/gtk-4.0/noctalia.css
+.config/xsettingsd/xsettingsd.conf
+.config/nwg-look/config
+.config/fontconfig/fonts.conf
+# ─── Apps ───
+.config/kitty
+.config/nvim
+.config/yazi
+.config/btop
+.config/easyeffects/db
+.config/orbiscreen/orbiscreen.toml
+.config/onlyoffice/DesktopEditors.conf
+.config/environment.d
+.config/mimeapps.list

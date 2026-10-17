@@ -1,0 +1,144 @@
+config_version = 14
+
+[audio]
+enable_overdrive = true
+
+[backdrop]
+enabled = false
+
+[brightness]
+sync_all_monitors = true
+
+[calendar]
+enabled = true
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "audio"
+
+[[control_center.shortcuts]]
+type = "mic_mute"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "clipboard"
+
+[desktop_widgets]
+enabled = false
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DVI-I-1", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 640.0
+    cy = 610.4166259765625
+    output = "DVI-I-1"
+    placement_height = 800.0
+    placement_width = 1280.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 873.0
+    cy = 800.0
+    output = "eDP-1"
+    placement_height = 982.0
+    placement_width = 1745.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[plugins]
+enabled = [
+    "noctalia/timer",
+    "thepunkoff/pomodoro",
+    "damian-ds7/battery-threshold",
+    "nightwatch75/todo",
+    "noctalia/notes",
+    "alexander/screen-toolkit",
+    "yuuto/arch-updater",
+    "raycursive/niri-displays",
+    "aristides/udiskie"
+]
+
+[shell]
+font_family = "Lilex Nerd Font Medium"
+screen_time_enabled = true
+
+    [shell.launcher]
+    show_app_origin_indicator = false
+
+[theme]
+builtin = "Noctalia"
+community_palette = "ADW"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kitty", "niri" ]
+    community_ids = [ "claude-code", "opencode", "spicetify", "zen-browser", "obsidian", "papirus-icons", "yazi" ]
+
+[wallpaper]
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/sbcamacho/Pictures/Wallpapers/black-hole-field.jpg"
+
+    [wallpaper.last]
+    path = "/home/sbcamacho/Pictures/Wallpapers/black-hole-field.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/sbcamacho/Pictures/Wallpapers/black-hole-field.jpg"
+
+[widget.media]
+artist_first = false

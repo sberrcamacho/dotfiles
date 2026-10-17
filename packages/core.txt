@@ -1,0 +1,54 @@
+# Mínimo para reproducir este escritorio (CachyOS). Instalar con:
+#   paru -S --needed - < <(grep -v '^#' packages/core.txt)
+# Compositor + shell
+niri
+noctalia
+cachyos-niri-noctalia
+xwayland-satellite
+xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
+gnome-keyring
+wl-clipboard
+cliphist
+brightnessctl
+power-profiles-daemon
+# Login
+greetd
+noctalia-greeter
+# Terminal, shell y editor
+kitty
+zsh
+cachyos-zsh-config
+neovim
+yazi
+btop
+fastfetch
+# Apariencia
+adw-gtk-theme
+papirus-icon-theme
+bibata-cursor-theme
+nwg-look
+inter-font
+ttf-lilex-nerd
+ttf-jetbrains-mono-nerd
+ttf-nerd-fonts-symbols-mono
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+# Plugins de Noctalia (screen-toolkit, udiskie, ...)
+wf-recorder
+gpu-screen-recorder
+tesseract
+tesseract-data-eng
+tesseract-data-spa
+udiskie
+# Audio
+pipewire-pulse
+easyeffects
+easyeffects-m0rf30-presets
+# Apps
+zen-browser-bin
+nautilus
+# Tablet como 2º monitor (AUR)
+orbiscreen
+evdi-dkms

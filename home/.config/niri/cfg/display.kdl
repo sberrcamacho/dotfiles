@@ -1,0 +1,26 @@
+// ────────────── Output Configuration ──────────────
+// You can run `niri msg outputs` to get the correct name for your displays.
+// You will have to remove "/-" and edit it before it takes effect.
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
+
+output "eDP-1" {
+    mode "1920x1080"
+    transform "normal"
+    focus-at-startup
+    scale 1.1
+}
+
+output "HDMI-A-1" {
+    mode "1024x768"
+    transform "normal"
+    position x=0 y=0
+    scale 1.0
+}
+
+// Orbiscreen (tablet como 2º monitor vía evdi). Su EDID solo anuncia ≤1024x768,
+// así que se fuerza el modo nativo de la tablet; a la derecha del portátil.
+output "DVI-I-1" {
+    mode custom=true "2560x1600@90"
+    scale 2.0
+    position x=1746 y=0
+}

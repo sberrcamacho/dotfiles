@@ -1,0 +1,4 @@
+# Archivos de sistema (se copian a / con sudo desde install.sh --system).
+/etc/greetd/config.toml
+/etc/modules-load.d/evdi.conf
+/etc/modprobe.d/evdi.conf

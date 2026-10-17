@@ -1,0 +1,6 @@
+// ────────────── Startup Applications ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
+
+    // polkit: handled by noctalia v5 built-in agent ([shell] polkit_agent = true)
+    spawn-at-startup "noctalia"
+    spawn-sh-at-startup "easyeffects --gapplication-service"

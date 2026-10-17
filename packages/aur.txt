@@ -1,0 +1,14 @@
+android-studio
+archtoys-bin
+arduino-ide-bin
+bibata-cursor-theme
+ds4drv
+easyeffects-m0rf30-presets
+evdi-dkms
+freedownloadmanager-bin
+google-chrome
+onedrive-abraunegg
+orbiscreen
+spotify
+stremio
+xboxdrv

@@ -1,0 +1,12 @@
+{
+  "name": "custom-snippets",
+  "engines": { "vscode": "^1.11.0" },
+  "contributes": {
+    "snippets": [
+      { "language": ["python"], "path": "./python.json" },
+      { "language": ["kotlin"], "path": "./kotlin.json" },
+      { "language": ["java"], "path": "./java.json" },
+      { "language": ["javascript", "typescript", "javascriptreact", "typescriptreact"], "path": "./javascript.json" }
+    ]
+  }
+}

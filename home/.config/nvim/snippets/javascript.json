@@ -1,0 +1,25 @@
+{
+  "Arrow function": {
+    "prefix": "caf",
+    "body": [
+      "const ${1:name} = (${2:args}) => {",
+      "  $0",
+      "};"
+    ]
+  },
+  "Async function": {
+    "prefix": "afn",
+    "body": [
+      "async function ${1:name}(${2:args}) {",
+      "  $0",
+      "}"
+    ]
+  },
+  "Fetch": {
+    "prefix": "fetch",
+    "body": [
+      "const res = await fetch(${1:url});",
+      "const data = await res.json();"
+    ]
+  }
+}
